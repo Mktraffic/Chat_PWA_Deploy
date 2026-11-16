@@ -44,6 +44,14 @@
 
     <meta name="apple-mobile-web-app-title" content="Twittor!">
 
+    <!-- Actividad 7: estilos del banner de instalación -->
+    <style>
+        #install-banner { padding: 12px; text-align: center; background: #fff; border-radius: 8px; margin: 0 12px; }
+        #install-banner span { display: block; margin-bottom: 8px; color: #555; }
+        #install-banner #install-btn { background-color: #3498db; width: 70%; padding: 8px; }
+        #install-banner #install-cerrar { background-color: #95a5a6; width: auto; padding: 8px 12px; margin-left: 6px; }
+    </style>
+
 </head>
 <body>
         <!-- Titulo -->
@@ -146,6 +154,13 @@
 
         <!-- Seleccion de personaje -->
         <div id="seleccion" class="seleccion animated fadeIn fast" align="center">
+
+            <!-- Actividad 7: banner de instalación personalizada -->
+            <div id="install-banner" class="oculto">
+                <span>¿Quieres usar el chat como app?</span>
+                <button id="install-btn">Instalar la aplicación en su dispositivo</button>
+                <button id="install-cerrar" aria-label="Cerrar">✕</button>
+            </div>
         
             <!-- Botón de notificaciones -->
             <button class="oculto btn-noti-activadas">Notificaciones Activadas</button>
@@ -225,6 +240,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/libs/plugins/mdtoast.min.js"></script>
         
+        <!-- Actividad 6: monitoreo RUM (web-vitals) -->
+        <script src="https://cdn.jsdelivr.net/npm/web-vitals@5/dist/web-vitals.iife.js"></script>
+        <script src="js/vitals.js"></script>
+        <!-- Actividad 7: instalación personalizada -->
+        <script src="js/install.js"></script>
+
         <!-- Camara Class -->
         <script src="js/camara-class.js"></script>
         <!-- Geolocalización (act. 1-6) y grabación de video (act. 7) -->

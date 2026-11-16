@@ -5,7 +5,7 @@ importScripts('js/sw-db.js');
 importScripts('js/sw-utils.js');
 
 
-const STATIC_CACHE    = 'static-v4';
+const STATIC_CACHE    = 'static-v5';
 const DYNAMIC_CACHE   = 'dynamic-v1';
 const INMUTABLE_CACHE = 'inmutable-v1';
 
@@ -15,6 +15,7 @@ const APP_SHELL = [
     'index.html',
     'css/style.css',
     'img/favicon.ico',
+    'img/icons/maskable-512x512.png',
     'img/avatars/hulk.jpg',
     'img/avatars/ironman.jpg',
     'img/avatars/spiderman.jpg',
@@ -24,6 +25,8 @@ const APP_SHELL = [
     'js/camara-class.js',
     'js/geo-class.js',
     'js/video-class.js',
+    'js/vitals.js',
+    'js/install.js',
     'js/sw-utils.js',
     'js/libs/plugins/mdtoast.min.js',
     'js/libs/plugins/mdtoast.min.css'
@@ -35,7 +38,8 @@ const APP_SHELL_INMUTABLE = [
     'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
     'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css',
     'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js',
-    'https://cdn.jsdelivr.net/npm/pouchdb@7.0.0/dist/pouchdb.min.js'
+    'https://cdn.jsdelivr.net/npm/pouchdb@7.0.0/dist/pouchdb.min.js',
+    'https://cdn.jsdelivr.net/npm/web-vitals@5/dist/web-vitals.iife.js'
 ];
 
 
