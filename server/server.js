@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const compression = require('compression');
 
 
 const app = express();
@@ -15,6 +16,10 @@ app.use(bodyParser.json({ limit: '50mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true })); // support encoded bodies
 
 
+// Compresión gzip/brotli de HTML, CSS, JS y JSON
+app.use(compression());
+
+
 // Enable CORS
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -25,7 +30,15 @@ app.use(function(req, res, next) {
 
 
 // Directorio Público
-app.use(express.static(publicPath));
+app.use(express.static(publicPath, {
+    maxAge: '7d',
+    setHeaders: (res, filePath) => {
+        // Estos archivos deben revalidarse siempre (el SW y lo que importa)
+        if (/(sw\.js|sw-[\w-]+\.js|index\.html|manifest\.json)$/.test(filePath)) {
+            res.setHeader('Cache-Control', 'no-cache');
+        }
+    }
+}));
 
 // Rutas 
 const routes = require('./routes');

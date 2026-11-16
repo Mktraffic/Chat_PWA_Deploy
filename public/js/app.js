@@ -126,7 +126,7 @@ function crearMensajeHTML(mensaje, personaje, lat, lng, foto, video) {
 
 
         <div class="avatar">
-            <img src="img/avatars/${ personaje }.jpg">
+            <img src="img/avatars/${ personaje }.webp" alt="" width="250" height="250">
         </div>
         <div class="bubble-container">
             <div class="bubble">
@@ -138,7 +138,7 @@ function crearMensajeHTML(mensaje, personaje, lat, lng, foto, video) {
     if ( foto ) {
         content += `
                 <br>
-                <img class="foto-mensaje" src="${ foto }">
+                <img class="foto-mensaje" src="${ foto }" alt="Foto adjunta" width="150" height="150">
         `;
     }
 
@@ -184,11 +184,12 @@ function crearMensajeMapa(lat, lng, personaje) {
         data-lat="${ lat }"
         data-lng="${ lng }">
                 <div class="avatar">
-                    <img src="img/avatars/${ personaje }.jpg">
+                    <img src="img/avatars/${ personaje }.webp" alt="" width="250" height="250">
                 </div>
                 <div class="bubble-container">
                     <div class="bubble">
                         <iframe
+                            title="Mapa de ubicación"
                             width="100%"
                             height="250"
                             frameborder="0" style="border:0"
@@ -215,7 +216,7 @@ function logIn( ingreso ) {
         salirBtn.removeClass('oculto');
         timeline.removeClass('oculto');
         avatarSel.addClass('oculto');
-        modalAvatar.attr('src', 'img/avatars/' + usuario + '.jpg');
+        modalAvatar.attr('src', 'img/avatars/' + usuario + '.webp');
     } else {
         nuevoBtn.addClass('oculto');
         salirBtn.addClass('oculto');
@@ -563,6 +564,7 @@ function mostrarMapaModal(lat, lng, info) {
     var content = `
             <div class="modal-mapa">
                 <iframe
+                    title="Mapa de ubicación"
                     width="100%"
                     height="250"
                     frameborder="0"

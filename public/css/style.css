@@ -2,12 +2,12 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    font-family: 'Quicksand';
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
   }
   
   html, body {
     margin: 0px !important;
-    color: #7f8c8d;
+    color: #566566;
     font-size: 16px;
     background-color: #dde1e2; 
     width: 100%;
@@ -31,11 +31,21 @@ button {
 }
 
 .btn-noti-activadas {
-  background-color: #3498db;
+  background-color: #2b78b0;
 }
 
 .btn-noti-desactivadas {
-  background-color: red;
+  background-color: #c0392b;
+}
+
+/* Espacio reservado para el botón de notificaciones (evita CLS al aparecer) */
+.seleccion .noti-slot {
+  height: 36px;
+  margin-top: 0;
+}
+
+.noti-slot button {
+  height: 36px;
 }
 
 
@@ -56,6 +66,7 @@ button {
 
 .seleccion-avatar {
   width: 150px;
+  height: 150px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -112,6 +123,7 @@ button {
 
 #modal-avatar {
   width: 50px;
+  height: 50px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -392,6 +404,7 @@ textarea {
 
     .avatar img {
       width: 100%;
+      height: auto;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
@@ -413,13 +426,13 @@ textarea {
     top: 0px;
 
     margin: auto;
-    background-color: #3498db;
-    text-shadow: #2084c7 1px 1px 0;
+    background-color: #2b78b0;
+    text-shadow: #1f5f8f 1px 1px 0;
     padding: 1em 0 !important;
     color: white;
     text-align: center;
     /* margin-top: 1em; */
-    font-family: "Lato";
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     font-size: 1.6em;
 }
 
@@ -568,11 +581,11 @@ and (-webkit-device-pixel-ratio : 3) {
   h3 {
     font-size: 1.2em;
     font-weight: bold;
-    font-family: 'Lato';
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
     display: inline-block;
     margin-top: .1em;
     margin-bottom: .2em;
-    color: #95a5a6; 
+    color: #566566; 
 }
   
   .retweet {
